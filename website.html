@@ -1,18 +1,32 @@
 <!doctype html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brief description of the webpage.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nicco Balerini/Adian Chan">
+
+    <meta charset="UTF-8">
+    <title>The bullied website</title>
+    <link rel="stylesheet" href="website.css">
+    <script src="website.js" defer></script>
 </head>
 
-<body>
-<titel>The bully counters</titel>
+<body id="body">
+<div id="inPageTitle">The bully counter</div>
+<br>
 <div id ="counters"></div>
-</br></br></br></br></br></br>
+</br>
 <form id="formContainer">
     <div id="formQuestion1"></div>
-    <input type="radio" id="yes">yes
+    <input type="radio" id="yes">Yes
     <br>
-    <input type="radio" id="no">no
-
+    <input type="radio" id="no">No
+    <br><br>
+    <input type="text" placeholder="Last Name of the person thet bullied you" id="firstName">
+    <br>
+    <input type="text" placeholder="Last Name of the person thet bullied you" id="lastName">
+    <br>
+    <button id="submit">submit</button>
 </form>
-<style>
-</style>
+
 </body>
