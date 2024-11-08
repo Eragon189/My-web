@@ -1,7 +1,7 @@
 let url = "";
 let lastName;
 let firstName;
-let passKey;
+let passKey  = process.env.passKey;
 console.log("output works!!!!")
 document.getElementById("button").onclick = function () {
   firstName = document.getElementById("firstName").value;
