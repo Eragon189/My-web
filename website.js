@@ -1,8 +1,6 @@
 let url = "";
 let lastName;
 let firstName;
-let passKey  = process.env.passKey;
-console.log("output works!!!!")
 document.getElementById("button").onclick = function () {
   firstName = document.getElementById("firstName").value;
   lastName = document.getElementById("lastName").value;
@@ -18,9 +16,13 @@ function sendData(firstName, lastName, passKey, url) {
     body: JSON.stringify({
       firstNameOfbullier: firstName,
       lastNameOfbullier: lastName,
+      passKey: passKey
     }),
   })
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.error("Error:", error));
 }
+
+
+sendData(firstName, lastName, process.env.passKey, url)
