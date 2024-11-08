@@ -1,17 +1,13 @@
-#firstName{
-
+#firstName {
     width: 300px;
-} #lastName{
-
+  }
+  #lastName {
     width: 300px;
-} 
-#body {
-
-    box-align:center;
-    
-}
-#formContainer{
-
-    box-align:center;
-
-}
+  }
+  #body {
+    box-align: center;
+  }
+  #formContainer {
+    box-align: center;
+  }
+  
