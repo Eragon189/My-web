@@ -1,28 +1,16 @@
+const express = require('express');
+const app = express();
+const port = 3000;
 
+// Middleware to parse JSON body
+app.use(express.json());
 
-// Define the ECC algorithm and key size (P-256 curve)
-const algorithm = {
-    name: "ECDSA",       // ECDSA for Elliptic Curve Digital Signature Algorithm
-    namedCurve: "P-256"  // Using the P-256 curve (256-bit)
-  };
-  
-  // Generate the ECC key pair
-  window.crypto.subtle.generateKey(
-    algorithm,
-    true,                // Whether the key is exportable
-    ["sign", "verify"]   // Key usage (sign with private key, verify with public key)
-  ).then(function(keyPair) {
-    console.log("Public Key:", keyPair.publicKey);
-    console.log("Private Key:", keyPair.privateKey);
-  }).catch(function(err) {
-    console.error("Error generating key pair:", err);
-  });
-  
+app.post('/api/myendpoint', (req, res) => {
+    const { name, age } = req.body;
+    console.log(`Received: Name - ${name}, Age - ${age}`);
+    res.status(200).json({ message: 'Data received successfully!' });
+});
 
-  window.crypto.subtle.exportKey("spki", keyPair.publicKey)
-  .then(function(exportedPublicKey) {
-    console.log("Exported Public Key:", new Uint8Array(exportedPublicKey));
-  })
-  .catch(function(err) {
-    console.error("Error exporting public key:", err);
-  });
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
